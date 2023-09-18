@@ -89,6 +89,10 @@ public class DateUtil {
     private static List<String> range(String startDateString, String endDateString, DateTimeFormatter formatter) {
         LocalDate startDate = LocalDate.parse(formatDateString(startDateString), formatter);
         LocalDate endDate = LocalDate.parse(formatDateString(endDateString), formatter);
+        //判断开始日期是否大于结束日期
+        if (startDate.isAfter(endDate)) {
+            throw new RuntimeException("开始日期不能大于结束日期");
+        }
         List<String> dateRange = new ArrayList<>();
         // 获取日期区间内的所有日期
         LocalDate currentDate = startDate;
@@ -110,6 +114,17 @@ public class DateUtil {
         LocalDate date = LocalDate.parse(dateString, inputFormatter);
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return date.format(outputFormatter);
+    }
+
+    /**
+     * 是否周末
+     *
+     * @param day 日期
+     * @return boolean
+     */
+    public static boolean isWeekend(String day) {
+        LocalDate date = LocalDate.parse(day, DATE_FORMAT_Y);
+        return date.getDayOfWeek().getValue() == 6 || date.getDayOfWeek().getValue() == 7;
     }
 
 }
