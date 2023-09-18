@@ -1,5 +1,8 @@
 package top.pxyz.holidays;
 
+import top.pxyz.holidays.cache.LegalHolidaysCache;
+import top.pxyz.holidays.parse.LegalHolidaysParse;
+
 import java.util.List;
 
 /**
@@ -12,12 +15,26 @@ import java.util.List;
 public class LegalHolidaysUtil {
 
     /**
+     * 日期正则
+     */
+    private static final String MATCHES = "\\d{4}-\\d{2}-\\d{2}";
+
+    /**
      * 判断是否为法定假日
      *
      * @param date 日期
      * @return 是否为法定假日
      */
     public static boolean filter(String date) {
+        //判断是否是正常日期格式
+        if (!date.matches(MATCHES)) {
+            return false;
+        }
+        //获取date中的年份
+        String year = date.substring(0, 4);
+        if(LegalHolidaysCache.CACHE_YEAR_MAP.containsKey(year)){
+            return LegalHolidaysCache.LEGAL_WORK_MAP.containsKey(date);
+        }
         return false;
     }
 
@@ -66,6 +83,17 @@ public class LegalHolidaysUtil {
     }
 
     /**
+     * 判断区间内时间存在几个工作日
+     *
+     * @param startDate 开始日期
+     * @param endDate   结束日期
+     * @return int
+     */
+    public static int filterWorkDays(String startDate, String endDate) {
+        return 0;
+    }
+
+    /**
      * 按年度获得法定节假日
      *
      * @param year 年
@@ -81,6 +109,13 @@ public class LegalHolidaysUtil {
      */
     public static List<String> getHolidaysByYear(String year) {
         return null;
+    }
+
+    /**
+     * 解析文本，获取法定节假日信息JSON
+     */
+    public static String getLegalHolidaysJson(String year, String text) {
+        return LegalHolidaysParse.parseLegalHolidaysJson(year,text);
     }
 
 }
