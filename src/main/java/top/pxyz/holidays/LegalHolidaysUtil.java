@@ -35,7 +35,7 @@ public class LegalHolidaysUtil {
         //获取date中的年份
         String year = date.substring(0, 4);
         if(LegalHolidaysCache.CACHE_YEAR_MAP.containsKey(year)){
-            return LegalHolidaysCache.LEGAL_WORK_MAP.containsKey(date);
+            return LegalHolidaysCache.LEGAL_HOLIDAY_MAP.containsKey(date);
         }
         return false;
     }
@@ -98,13 +98,13 @@ public class LegalHolidaysUtil {
         int workDay = dayList.size();
         for (String day : dayList) {
             boolean isWorkDay = DateUtil.isWeekend(day);
-            if (LegalHolidaysCache.LEGAL_HOLIDAY_MAP.containsKey(day) && !isWorkDay) {
-                workDay--;
-            }
             if (isWorkDay) {
                 workDay--;
             }
-            if(LegalHolidaysCache.LEGAL_WORK_MAP.containsKey(day)){
+            if (LegalHolidaysCache.LEGAL_HOLIDAY_MAP.containsKey(day) && !isWorkDay) {
+                workDay--;
+            }
+            if(LegalHolidaysCache.LEGAL_WORK_MAP.containsKey(day) && isWorkDay){
                 workDay++;
             }
         }
@@ -130,7 +130,7 @@ public class LegalHolidaysUtil {
             if (!isWorkDay) {
                 holiday--;
             }
-            if (LegalHolidaysCache.LEGAL_HOLIDAY_MAP.containsKey(day)) {
+            if (LegalHolidaysCache.LEGAL_HOLIDAY_MAP.containsKey(day) && !isWorkDay) {
                 holiday++;
             }
             if(LegalHolidaysCache.LEGAL_WORK_MAP.containsKey(day) && isWorkDay){

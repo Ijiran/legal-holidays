@@ -22,7 +22,7 @@
     </build>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <description></description>
+    <description>提供中国法定节假日多种形式的获取方法，更多请查看文档。</description>
     <url>https://github.com/Ijiran/legal-holidays</url>
 
     <properties>
@@ -72,6 +72,21 @@
             <email>imojiran@gmail.com</email>
         </developer>
     </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version2.0</name>
+            <url>https://www.apache.org/licenses/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/Ijiran/legal-holidays.git</connection>
+        <developerConnection>https://github.com/Ijiran/legal-holidays</developerConnection>
+        <url>https://github.com/Ijiran/legal-holidays.git</url>
+        <tag>v${project.version}</tag>
+    </scm>
 
 
 </project>

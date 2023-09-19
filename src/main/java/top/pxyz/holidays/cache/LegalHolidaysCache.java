@@ -81,8 +81,7 @@ public class LegalHolidaysCache {
                                 for(String work : workList){
                                     LEGAL_WORK_MAP.put(work, fileName.replace(".json", ""));
                                 }
-                                System.out.println(LEGAL_HOLIDAY_MAP);
-                                System.out.println(LEGAL_WORK_MAP);
+                                CACHE_YEAR_MAP.put(fileName.replace(".json", ""), fileName.replace(".json", ""));
                             }
                         }
                     } catch (IOException e) {

@@ -1,6 +1,6 @@
 package top.pxyz.holidays;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * 法定节假日测试
@@ -11,48 +11,33 @@ import org.junit.jupiter.api.Test;
 public class LegalHolidaysTest {
 
     @Test
-    public void testFilter() {
+    public void testFilterBoolean() {
+        System.out.println(LegalHolidaysUtil.filterBoolean("2023-09-18"));
+        System.out.println(LegalHolidaysUtil.filterBoolean("2023-09-28"));
+        System.out.println(LegalHolidaysUtil.filterBoolean("2023-09-29"));
 
+        System.out.println(LegalHolidaysUtil.filterBoolean("2023-09-18", "2023-09-28"));
+        System.out.println(LegalHolidaysUtil.filterBoolean("2023-09-18", "2023-09-30"));
     }
 
     @Test
     public void testFilterWorkDay() {
-
+        System.out.println(LegalHolidaysUtil.filterWorkDay("2023-09-18", "2023-09-30"));
     }
 
     @Test
     public void testFilterHoliday() {
-
+        System.out.println(LegalHolidaysUtil.filterHoliday("2023-09-18", "2023-09-30"));
     }
 
     @Test
     public void testFilterLegalHoliday() {
-
+        System.out.println(LegalHolidaysUtil.filterLegalHoliday("2023-09-18", "2023-09-30"));
     }
 
     @Test
-    public void testFilterLegalHolidayWorkDay() {
-
-    }
-
-    @Test
-    public void testFilterLegalHolidayHoliday() {
-
-    }
-
-    @Test
-    public void testFilterLegalHolidayWorkDayHoliday() {
-
-    }
-
-    @Test
-    public void testFilterLegalHolidayWorkDayHoliday2() {
-
-    }
-
-    @Test
-    public void testFilterLegalHolidayWorkDayHoliday3() {
-
+    public void testFilterList() {
+        System.out.println(LegalHolidaysUtil.filterList("2023-09-18", "2023-09-30"));
     }
 
 }
