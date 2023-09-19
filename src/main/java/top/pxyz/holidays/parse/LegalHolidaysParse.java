@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
  * 法定节假日解析
  *
  * @author Ijiran
- * @date 2023/09/18
  * @since 1.0
  */
 public class LegalHolidaysParse {

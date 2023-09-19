@@ -11,7 +11,6 @@ import java.util.List;
  * 法定假日util
  *
  * @author Ijiran
- * @date 2023/09/18
  * @since 1.0
  */
 public class LegalHolidaysUtil {
@@ -183,6 +182,10 @@ public class LegalHolidaysUtil {
 
     /**
      * 解析文本，获取法定节假日信息JSON
+     *
+     * @param year 年
+     * @param text 文本
+     * @return jsonStr
      */
     public static String getLegalHolidaysJson(String year, String text) {
         return LegalHolidaysParse.parseLegalHolidaysJson(year,text);

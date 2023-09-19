@@ -18,7 +18,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * 法定假日缓存
  *
  * @author Ijiran
- * @date 2023/09/18
  * @since 1.0
  */
 public class LegalHolidaysCache {
