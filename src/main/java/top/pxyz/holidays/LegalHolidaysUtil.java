@@ -61,7 +61,7 @@ public class LegalHolidaysUtil {
     }
 
     /**
-     * 判断区间内时间是否存在法定假日
+     * 判断区间内时间的法定节假日
      *
      * @param startDateString 开始日期（yyyy-mm-dd）
      * @param endDateString   结束日期（yyyy-mm-dd）
