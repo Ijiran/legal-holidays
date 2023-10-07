@@ -115,6 +115,28 @@ String legalHolidaysJson = LegalHolidaysUtil.getLegalHolidaysJson("2023", "一�
 implementation 'top.pxyz:legal-holidays:1.0'
 ```
 
+### 🍎自定义节假日配置文件
+
+因为节假日的安排是不固定的，所以本项目提供了自定义节假日配置文件的方式，方便开发者自行配置节假日。
+
+#### 例子
+    
+[LegalHolidaysConfigExample.java](src%2Fmain%2Fjava%2Ftop%2Fpxyz%2Fholidays%2Fconfig%2FLegalHolidaysConfigExample.java)
+
+#### 如何获取到节假日配置信息
+
+1. 国务院发布的最新节假日信息
+2. 通过爬虫获取到的节假日信息
+3. 通过其他方式获取到的节假日信息
+4. 通过自己编写的程序生成的节假日信息
+5. 等等
+
+#### 可能会使用到的节假日内置工具方法
+
+[LegalHolidaysParse.java](src%2Fmain%2Fjava%2Ftop%2Fpxyz%2Fholidays%2Fparse%2FLegalHolidaysParse.java)
+
+[LegalHolidaysParseTest.java](src%2Ftest%2Fjava%2Ftop%2Fpxyz%2Fholidays%2FLegalHolidaysParseTest.java)
+
 ### 📥下载jar
 
 点击以下链接，下载`legal-holidays-X.X.X.jar`即可：
