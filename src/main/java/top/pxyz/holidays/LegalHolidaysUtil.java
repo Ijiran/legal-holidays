@@ -161,24 +161,24 @@ public class LegalHolidaysUtil {
         return holiday;
     }
 
-//
-//    /**
-//     * 按年度获得法定节假日
-//     *
-//     * @param year 年
-//     */
-//    public static List<String> getLegalHolidaysByYear(String year) {
-//        return null;
-//    }
-//
-//    /**
-//     * 按年度获得节假日
-//     *
-//     * @param year 年
-//     */
-//    public static List<String> getHolidaysByYear(String year) {
-//        return null;
-//    }
+    /**
+     * 按年度获得法定节假日
+     *
+     * @param year 年
+     */
+    public static List<String> getLegalHolidaysByYear(String year) {
+
+        return null;
+    }
+
+    /**
+     * 按年度获得节假日
+     *
+     * @param year 年
+     */
+    public static List<String> getHolidaysByYear(String year) {
+        return null;
+    }
 
     /**
      * 解析文本，获取法定节假日信息JSON
