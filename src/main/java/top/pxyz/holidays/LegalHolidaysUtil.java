@@ -167,6 +167,9 @@ public class LegalHolidaysUtil {
      * @param year 年
      */
     public static List<String> getLegalHolidaysByYear(String year) {
+        if(!LegalHolidaysCache.CACHE_YEAR_MAP.containsKey(year)){
+            throw new RuntimeException("年份不存在，请维护缓存数据或者填写其他年份。");
+        }
 
         return null;
     }
