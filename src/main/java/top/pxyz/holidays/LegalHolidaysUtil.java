@@ -170,8 +170,13 @@ public class LegalHolidaysUtil {
         if(!LegalHolidaysCache.CACHE_YEAR_MAP.containsKey(year)){
             throw new RuntimeException("年份不存在，请维护缓存数据或者填写其他年份。");
         }
-
-        return null;
+        List<String> list = new ArrayList<>();
+        LegalHolidaysCache.LEGAL_HOLIDAY_MAP.forEach((k, v) -> {
+            if (k.startsWith(year)) {
+                list.add(k);
+            }
+        });
+        return list;
     }
 
     /**
@@ -180,7 +185,16 @@ public class LegalHolidaysUtil {
      * @param year 年
      */
     public static List<String> getHolidaysByYear(String year) {
-        return null;
+        if(!LegalHolidaysCache.CACHE_YEAR_MAP.containsKey(year)){
+            throw new RuntimeException("年份不存在，请维护缓存数据或者填写其他年份。");
+        }
+        List<String> list = new ArrayList<>();
+        LegalHolidaysCache.LEGAL_HOLIDAY_MAP.forEach((k, v) -> {
+            if (k.startsWith(year) && !DateUtil.isWeekend(k)) {
+                list.add(k);
+            }
+        });
+        return list;
     }
 
     /**
