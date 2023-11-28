@@ -126,4 +126,24 @@ public class DateUtil {
         return date.getDayOfWeek().getValue() == 6 || date.getDayOfWeek().getValue() == 7;
     }
 
+    /**
+     * 是否周末
+     *
+     * @param day 日期
+     * @return boolean
+     */
+    public static boolean isWeekend(LocalDate day) {
+        return day.getDayOfWeek().getValue() == 6 || day.getDayOfWeek().getValue() == 7;
+    }
+
+    /**
+     * 是否周末
+     *
+     * @param day 日期
+     * @return boolean
+     */
+    public static boolean isWeekend(long day) {
+        return isWeekend(LocalDate.ofEpochDay(day));
+    }
+
 }
